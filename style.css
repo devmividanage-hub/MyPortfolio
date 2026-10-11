@@ -978,3 +978,201 @@ body.dark-mode {
         letter-spacing: 4px;
     }
 }
+
+/* =========================================
+   TYPOGRAPHY AND SPACING FIX
+========================================= */
+
+/* Consistent text rendering */
+body {
+    line-height: 1.65;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Keep paragraphs readable and properly spaced */
+p {
+    margin-top: 0;
+    margin-bottom: 12px;
+    overflow-wrap: break-word;
+}
+
+/* Avoid extra spacing after the final paragraph */
+.about-text p:last-child,
+.about-card p:last-child,
+.skill-card p:last-child,
+.project-card p:last-child,
+.timeline-content p:last-child,
+.contact-content > p:last-child,
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+/* Consistent spacing between sections */
+section {
+    padding-top: 85px;
+    padding-bottom: 85px;
+    scroll-margin-top: 80px;
+}
+
+/* Education heading */
+.section-title {
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #182b49;
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #60778d;
+    margin-bottom: 0;
+}
+
+/* About paragraphs */
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* Prevent skill descriptions from appearing too spread out */
+.skill-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Improve project card consistency */
+.projects-container {
+    align-items: stretch;
+    grid-auto-rows: 1fr;
+    row-gap: 25px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.project-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.project-card .technologies {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    align-self: flex-start;
+}
+
+/* Improve timeline readability */
+.timeline-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.timeline-item {
+    margin-bottom: 35px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Contact paragraph */
+.contact-content > p {
+    line-height: 1.8;
+}
+
+/* Consistent heading spacing */
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    line-height: 1.25;
+}
+
+/* Dark mode: education heading */
+.dark-mode .section-title h2 {
+    color: #e8f5f7;
+}
+
+.dark-mode .section-title p {
+    color: #9bb7c0;
+}
+
+/* =========================================
+   RESPONSIVE SPACING
+========================================= */
+
+@media (max-width: 850px) {
+    section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    section {
+        padding: 60px 20px;
+        scroll-margin-top: 65px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .projects-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .project-card {
+        padding: 24px;
+    }
+
+    .timeline {
+        margin-left: 12px;
+        padding-left: 28px;
+    }
+
+    .timeline-dot {
+        left: -37px;
+    }
+}
+
+/* Respect users who prefer reduced animation */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
